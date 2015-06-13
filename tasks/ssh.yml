@@ -1,0 +1,4 @@
+---
+- name: Make sure authorized_keys uptodate
+  authorized_key: user={{ item.name }} key="{{ item.key }}"
+  with_items: basenode_ssh_users

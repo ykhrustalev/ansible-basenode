@@ -1,9 +1,9 @@
 ---
 
-- name: be sure dist up to date
+- name: Make sure dist up to date
   apt: upgrade=safe force=yes
 
-- name: install base packages
+- name: Make sure base packages installed
   apt: name={{ item }} state=present update_cache=yes
   with_items:
     - vim

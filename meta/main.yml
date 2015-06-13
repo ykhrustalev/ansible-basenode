@@ -2,7 +2,7 @@
 galaxy_info:
   author: ykhrustalev
   description: basic node configuration
-  min_ansible_version: 1.2
+  min_ansible_version: 1.4
   platforms:
   - name: Ubuntu
     versions:

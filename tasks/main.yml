@@ -6,3 +6,6 @@
   tags: [apt]
   when: ansible_os_family == 'Debian'
 
+- include: ssh.yml
+  tags: [ssh]
+

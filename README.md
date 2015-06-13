@@ -15,6 +15,10 @@ Role Variables
       - en_US.UTF-8
 
 
+    basenode_ssh_users:
+      - name: '{{ ansible_ssh_user }}'
+        key: ssh-rsa xxx235hash admin
+
 Dependencies
 ------------
 
@@ -41,4 +45,4 @@ MIT
 Author Information
 ------------------
 
---
+Yuri Khrustalev
