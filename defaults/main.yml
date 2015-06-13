@@ -3,3 +3,7 @@
 
 basenode_locale_list:
   - en_US.UTF-8
+
+basenode_ssh_users: []
+
+timezone: UTC
