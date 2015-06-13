@@ -1,0 +1,4 @@
+---
+- name: generate en_US locale
+  locale_gen: name={{item}} state=present
+  with_items: {{basenode_locale_list}}

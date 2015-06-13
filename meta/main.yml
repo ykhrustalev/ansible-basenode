@@ -1,0 +1,21 @@
+---
+galaxy_info:
+  author: ykhrustalev
+  description: basic node configuration
+  min_ansible_version: 1.2
+  platforms:
+  - name: Ubuntu
+    versions:
+    - all
+  - name: Debian
+    versions:
+    - jessie
+    - squeeze
+    - wheezy
+  categories:
+  - system
+dependencies:
+  - role: ssh
+  - role: franklinkim.sudo
+  - role: bennojoy.ntp
+  - role: Stouts.timezone

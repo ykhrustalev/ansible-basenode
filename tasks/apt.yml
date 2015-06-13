@@ -1,0 +1,14 @@
+---
+
+- name: be sure dist up to date
+  apt: upgrade=safe force=yes
+
+- name: install base packages
+  apt: name={{ item }} state=present update_cache=yes
+  with_items:
+    - vim
+    - curl
+    - wget
+    - unzip
+    - strace
+    - iotop

@@ -1,0 +1,5 @@
+---
+# defaults file for basenode
+
+basenode_locale_list:
+  - en_US.UTF-8
