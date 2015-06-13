@@ -6,7 +6,7 @@ Basic node, currently debian, keep track on initial setup
 Requirements
 ------------
 
-Debina version >= 6
+Debian version >= 6
 
 Role Variables
 --------------
