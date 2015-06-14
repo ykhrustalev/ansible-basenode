@@ -3,13 +3,16 @@
 - name: Install correct repo list
   copy: src=deb/apt/sources.list.{{basenode_codename}} dest=/etc/apt/sources.list
   when: basenode_install_repos and basenode_codename
-  tags: wip
 
 - name: Make sure dist up to date
   apt: upgrade=safe force=yes
 
 - name: Make sure base packages installed
-  apt: name={{item}} state=present update_cache=yes
+  apt: >
+    name={{item}}
+    state=present
+    update_cache=yes
+    cache_valid_time=60
   with_items:
     - vim
     - curl

@@ -2,13 +2,16 @@
 - include: locale.yml
   tags:
     - locale
+    - basenode
 
 - include: apt.yml
   when: ansible_os_family == 'Debian'
   tags:
     - apt
+    - basenode
 
 - include: ssh.yml
   tags:
     - ssh
+    - basenode
 
