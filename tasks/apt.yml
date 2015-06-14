@@ -17,4 +17,6 @@
     - unzip
     - strace
     - iotop
-
+    - openssh-server
+    - openssh-client
+    - rsync
