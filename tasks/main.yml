@@ -1,11 +1,14 @@
 ---
 - include: locale.yml
-  tags: [locale]
+  tags:
+    - locale
 
 - include: apt.yml
-  tags: [apt]
   when: ansible_os_family == 'Debian'
+  tags:
+    - apt
 
 - include: ssh.yml
-  tags: [ssh]
+  tags:
+    - ssh
 

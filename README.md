@@ -3,6 +3,11 @@ Role Name
 
 Basic node, currently debian, keep track on initial setup
 
+Installation
+------------
+
+    ansible-galaxy install ykhrustalev.basenode
+
 Requirements
 ------------
 
@@ -11,19 +16,29 @@ Debian version >= 6
 Role Variables
 --------------
 
+To install repos list, define
+
+    basenode_codename: jessie
+    basenode_install_repos: true
+
+
     basenode_locale_list:
       - en_US.UTF-8
 
 
     basenode_ssh_users:
-      - name: '{{ ansible_ssh_user }}'
-        key: ssh-rsa xxx235hash admin
+      - user: '{{ ansible_ssh_user }}'
+        key: 'ssh-rsa xxx235hash admin'
+        
+        
+    sudo_users:
+      - { name: '%vagrant', nopasswd: yes }
+    
 
 Dependencies
 ------------
 
     dependencies:
-      - role: ssh
       - role: franklinkim.sudo
       - role: bennojoy.ntp
       - role: Stouts.timezone

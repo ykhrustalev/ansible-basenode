@@ -7,3 +7,10 @@ basenode_locale_list:
 basenode_ssh_users: []
 
 timezone: UTC
+
+basenode_install_apt_repo: false
+
+
+basenode_codename:
+
+basenode_install_repos: true

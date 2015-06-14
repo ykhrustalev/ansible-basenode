@@ -15,7 +15,6 @@ galaxy_info:
   categories:
   - system
 dependencies:
-  - role: ssh
   - role: franklinkim.sudo
   - role: bennojoy.ntp
   - role: Stouts.timezone
