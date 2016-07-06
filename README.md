@@ -16,36 +16,39 @@ Debian version >= 6
 Role Variables
 --------------
 
-To install repos list, define
+There are fooloing defaults defined
 
-    basenode_codename: jessie
-    basenode_install_repos: true
+    ---
+    basenode_motd: |
+      |                                 |
+      |    Server managed by Ansible    |
+      |                                 |
 
 
-Setup locales
 
-    basenode_locale_list:
-      - en_US.UTF-8
+    # packages to be installed for debian
+    basenode_debian_packages:
+      - curl
+      - htop
+      - iftop
+      - iotop
+      - openssh-client
+      - openssh-server
+      - rsync
+      - strace
+      - sudo
+      - tmux
+      - unzip
+      - vim
+      - wget
 
-SSH access
-
-    basenode_ssh_users:
-      - user: '{{ ansible_ssh_user }}'
-        key: 'ssh-rsa xxx235hash admin'
-        
-Sudoers
-        
-    sudo_users:
-      - { name: '%vagrant', nopasswd: yes }
+Role does not use any hardcoded variables
     
 
 Dependencies
 ------------
 
-    dependencies:
-      - role: franklinkim.sudo
-      - role: bennojoy.ntp
-      - role: Stouts.timezone
+None
 
 Example Playbook
 ----------------
@@ -55,6 +58,8 @@ To use add
     - hosts: servers
       roles:
          - role: ykhrustalev.basenode
+           basenode_packages:
+             - vim
 
 License
 -------

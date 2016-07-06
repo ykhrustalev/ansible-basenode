@@ -1,20 +1,23 @@
 ---
 galaxy_info:
-  author: ykhrustalev
-  description: basic node configuration
-  min_ansible_version: 1.4
+  author: Yuri Khrustalev
+  description: >
+    Basic node with minimal packages
+
+  license: MIT
+
+  min_ansible_version: 1.9
+
   platforms:
-  - name: Ubuntu
-    versions:
-    - all
+   - name: Ubuntu
+     versions:
+      - all
   - name: Debian
     versions:
     - jessie
-    - squeeze
     - wheezy
-  categories:
-  - system
-dependencies:
-  - role: franklinkim.sudo
-  - role: bennojoy.ntp
-  - role: Stouts.timezone
+
+  galaxy_tags:
+    - system
+
+dependencies: []

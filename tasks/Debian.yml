@@ -1,0 +1,8 @@
+---
+- name: Install packages
+  apt:
+    name: '{{item}}'
+    state: present
+    update_cache: yes
+    cache_valid_time: 60
+  with_items: '{{basenode_debian_packages}}'

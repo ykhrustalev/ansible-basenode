@@ -1,7 +1,0 @@
-deb http://cdn.debian.net/debian/ jessie-backports main contrib non-free
-
-deb http://cdn.debian.net/debian/ jessie-updates main contrib non-free
-
-deb http://cdn.debian.net/debian/ jessie main contrib non-free
-
-deb http://security.debian.org/ jessie/updates main contrib non-free

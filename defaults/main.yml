@@ -1,16 +1,24 @@
 ---
-# defaults file for basenode
-
-basenode_locale_list:
-  - en_US.UTF-8
-
-basenode_ssh_users: []
-
-timezone: UTC
-
-basenode_install_apt_repo: false
+basenode_motd: |
+  |                                 |
+  |    Server managed by Ansible    |
+  |                                 |
 
 
-basenode_codename:
 
-basenode_install_repos: true
+# packages to be installed for debian
+basenode_debian_packages:
+  - curl
+  - htop
+  - iftop
+  - iotop
+  - openssh-client
+  - openssh-server
+  - rsync
+  - strace
+  - sudo
+  - tmux
+  - unzip
+  - vim
+  - wget
+

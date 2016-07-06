@@ -1,4 +1,0 @@
----
-- name: Make sure locales generated
-  locale_gen: name={{item}} state=present
-  with_items: basenode_locale_list
