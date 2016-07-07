@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM ubuntu:16.04
 
 RUN apt-get update \
     && apt-get install -y  --no-install-recommends --no-install-suggests \
@@ -8,6 +8,9 @@ RUN apt-get update \
         libssl-dev \
         libffi-dev \
     && pip install -U \
+        setuptools \
+        wheel \
+    && pip install \
         `# common ansible` \
         pycrypto \
         cryptography \
