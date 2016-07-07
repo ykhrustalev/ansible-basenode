@@ -5,9 +5,12 @@ services:
   - docker
 
 env:
-  - matrix:
-    - IMG_NAME=debian IMG_TAG=jessie ANSIBLE_VERSION=1.9.0
-    - IMG_NAME=debian IMG_TAG=jessie ANSIBLE_VERSION=2.0.1
+  - IMG_NAME: debian
+    IMG_TAG: jessie
+    ANSIBLE_VERSION: 1.9.6
+  - IMG_NAME: debian
+    IMG_TAG: jessie
+    ANSIBLE_VERSION: 2.0.1
 
 script:
   - tests/rundocker
