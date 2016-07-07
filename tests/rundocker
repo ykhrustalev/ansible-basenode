@@ -2,6 +2,8 @@
 
 set -e
 
+cd `dirname $0`
+
 test_img_name=${IMG_NAME}-tests:${IMG_TAG}
 
 docker build --rm \
