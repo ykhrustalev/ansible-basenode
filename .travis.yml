@@ -10,7 +10,7 @@ env:
     - IMG_NAME=debian IMG_TAG=jessie ANSIBLE_VERSION=2.0.1
 
 script:
-  - tests./rundocker
+  - tests/rundocker
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
