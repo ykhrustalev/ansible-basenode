@@ -1,0 +1,19 @@
+#!/bin/bash
+
+set -e
+
+pip install ansible==${ANSIBLE_VERSION}
+
+export ANSIBLE_CONFIG=tests/ansible.cfg
+
+# syntax check
+ansible-playbook tests/test.yml --syntax-check
+
+# first run
+ansible-playbook tests/test.yml
+
+# run idempotence.
+ansible-playbook tests/test.yml \
+    | grep -q 'changed=0.*failed=0' \
+    && (echo 'Idempotence test: pass' && exit 0) \
+    || (echo 'Idempotence test: fail' && exit 1)

@@ -1,0 +1,19 @@
+#!/bin/bash
+
+set -e
+
+test_img_name=${IMG_NAME}-tests:${IMG_TAG}
+
+docker build --rm \
+    -f Dockerfile.${IMG_NAME}.${IMG_TAG} \
+    -t ${test_img_name} \
+    .
+
+docker run --rm -t -i \
+    -v `pwd`/..:/role \
+    -w /role \
+    -e ANSIBLE_VERSION=${ANSIBLE_VERSION} \
+    ${test_img_name} \
+    ./tests/runtests
+
+
