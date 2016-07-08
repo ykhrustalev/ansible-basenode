@@ -2,15 +2,13 @@ FROM debian:wheezy
 
 RUN apt-get update \
     && apt-get install -y  --no-install-recommends --no-install-suggests \
-        python-pip \
         build-essential \
+        python-setuptools \
         python-dev \
         libssl-dev \
         libffi-dev \
-    && pip install urllib3[secure] \
-    && pip install -U pip==8.1.2 \
-    && ln -s /usr/local/bin/pip /usr/bin/ \
-    && pip install -U setuptools==18.0.1 \
+    && easy_install pip \
+    && pip install -U setuptools \
     && pip install -U wheel \
     && pip install \
         `# common ansible` \
