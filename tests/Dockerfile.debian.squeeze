@@ -1,7 +1,12 @@
 FROM debian:squeeze
 
-RUN apt-get update \
-    && apt-get install -y  --no-install-recommends --no-install-suggests \
+ENV APT_HACK="-o Acquire::Check-Valid-Until=false"
+
+# repos already expired
+RUN sed -i.bak s'/httpredir.debian.org/archive.debian.org/' /etc/apt/sources.list \
+    && sed -i.bak '/squeeze-updates/d' /etc/apt/sources.list \
+    && apt-get ${APT_HACK} update \
+    && apt-get install -y --no-install-recommends \
         python-pip \
         build-essential \
         python-dev \
