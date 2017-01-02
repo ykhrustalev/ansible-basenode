@@ -1,0 +1,25 @@
+FROM debian:squeeze
+
+ENV APT_HACK="-o Acquire::Check-Valid-Until=false"
+
+# repos already expired
+RUN sed -i.bak s'/httpredir.debian.org/archive.debian.org/' /etc/apt/sources.list \
+    && sed -i.bak '/squeeze-updates/d' /etc/apt/sources.list \
+    && apt-get ${APT_HACK} update \
+    && apt-get install -y --no-install-recommends \
+        python-pip \
+        build-essential \
+        python-dev \
+        libssl-dev \
+        libffi-dev \
+    && easy_install pip \
+        && pip install -U setuptools \
+        && pip install -U wheel \
+        && pip install \
+            `# common ansible` \
+            pycrypto \
+            cryptography \
+            jinja2 \
+            paramiko \
+            PyYAML \
+        && rm -rf /var/lib/apt/lists/* /root/.cache

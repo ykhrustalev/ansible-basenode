@@ -22,3 +22,18 @@ basenode_debian_packages:
   - vim
   - wget
 
+# packages to be installed for centos
+basenode_centos_packages:
+  - curl
+  - htop
+  - iftop
+  - iotop
+  - iptraf
+  - openssh-clients
+  - openssh-server
+  - rsync
+  - sudo
+  - tmux
+  - unzip
+  - vim-common
+  - wget

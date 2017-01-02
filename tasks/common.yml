@@ -1,0 +1,5 @@
+---
+- name: Update motd
+  copy:
+    content: "{{basenode_motd}}"
+    dest: /etc/motd

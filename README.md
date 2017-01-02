@@ -1,6 +1,8 @@
 Role Name
 =========
 
+[![Build Status](https://travis-ci.org/ykhrustalev/ansible-basenode.svg?branch=master)](https://travis-ci.org/ykhrustalev/ansible-basenode)
+
 Basic node, currently debian, keep track on initial setup
 
 Installation
