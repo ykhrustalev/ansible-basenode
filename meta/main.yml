@@ -3,11 +3,9 @@ galaxy_info:
   author: Yuri Khrustalev
   description: >
     Basic node with minimal packages
-
+  company: Yuri Khrustalev
   license: MIT
-
   min_ansible_version: 1.9
-
   platforms:
     - name: Ubuntu
       versions:
@@ -16,8 +14,6 @@ galaxy_info:
       versions:
         - jessie
         - wheezy
-
   galaxy_tags:
     - system
-
 dependencies: []
